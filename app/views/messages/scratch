@@ -1,0 +1,2 @@
+
+<a href="/messages/<%= message.id %>"><%= message.title %></a>
