@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20140322203421) do
 
   create_table "messages", force: true do |t|
-    t.string "title"
+    t.string "url"
     t.string "author"
     t.string "content"
   end
