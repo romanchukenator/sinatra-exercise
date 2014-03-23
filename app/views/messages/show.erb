@@ -1,7 +1,22 @@
-<h1><%= @message.url %></h1>
-
 <p>Author: <%= @message.author %></p>
-<p><%= @message.content  %></p>
 
+<p>
+
+<%= @message.content  %> website: 
+
+<a href="http://<%= @message.url %>">
+<%= @message.url %>
+</a>
+
+<br />
+
+<small>
+<a href="/all/<%= @message.author %>">all messages from this tubular dude</a>
+</small>
+
+</p>
+
+<p><small><%= @message.created_at %></small></p>
 <hr/>
 <a href="/messages">Back to All Messages</a>
+<hr/>

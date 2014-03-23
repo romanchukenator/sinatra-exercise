@@ -1,4 +1,6 @@
-<% @messages.each do |message| %>
+<h3>ALL THE MESSAGES of the Motherfucking Wizard <%= @message[0].author.upcase %>!!!!!!!!!!!!!!!!!!!!!!!</h3>
+
+<% @message.each do |message| %>
   <div class="message">
     <a href="/messages/<%= message.id %>"><%= message.author %></a>
     <p>
@@ -8,3 +10,5 @@
     <hr/>
   </div>
 <% end %>
+
+

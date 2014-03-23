@@ -15,7 +15,14 @@ end
 
 get '/messages/:id' do
   @message = Message.find params[:id]
+  # @message = Message.where( id: params[:id] ).limit(5)
+  # @message = Message.where( id: params[:id] )
   erb :'messages/show'
+end
+
+get '/all/:author' do
+  @message = Message.where( author: params[:author])
+  erb :'messages/all'
 end
 
 post '/messages' do
@@ -24,6 +31,19 @@ post '/messages' do
     content: params[:content],
     author:  params[:author]
   )
+
+  puts @message.url
+
+  if @message.url =~ /^#{URI::regexp}$/
+    puts "Fuck me, this is all sorts of awesome!"
+    # redirect '/messages'
+  end
+
+  if @message.url =~ URI::regexp
+    puts "Fuck me, MUCH LESS COMPLICATED!!!!"
+    # redirect '/messages'
+  end
+
   if @message.save
     redirect '/messages'
   else
